@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodelingoApp.Views.HomePage"
+             Title="Home">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+            <Label Text="Home" FontSize="28" FontAttributes="Bold" />
+            <Frame Padding="16">
+                <VerticalStackLayout>
+                    <Label Text="Current Points: 120" FontAttributes="Bold" />
+                    <Label Text="Streak: 5 days" />
+                    <Label Text="Plan: Free" />
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Start Sample Quiz" Clicked="OnStartQuizClicked" />
+            <Button Text="Profile" Clicked="OnProfileClicked" />
+            <Button Text="Subscription" Clicked="OnSubscriptionClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
