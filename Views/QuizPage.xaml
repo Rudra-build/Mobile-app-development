@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodelingoApp.Views.QuizPage"
+             Title="Quiz">
+    <VerticalStackLayout Padding="20" Spacing="16">
+        <Label Text="Sample Quiz" FontSize="28" FontAttributes="Bold" />
+        <Label Text="Question 1 of 5" />
+        <Frame Padding="16">
+            <Label Text="What does API stand for?" FontSize="18" />
+        </Frame>
+        <Button Text="Application Programming Interface" />
+        <Button Text="Advanced Program Integration" />
+        <Button Text="Automatic Page Index" />
+        <Button Text="Finish Quiz" Clicked="OnFinishClicked" />
+    </VerticalStackLayout>
+</ContentPage>
