@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CodeLingo.ViewModels"
+             x:Class="CodeLingo.Views.SubscriptionPage"
+             Title="My Subscription">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="20">
+
+            <!-- Header -->
+            <Label Text="Your Plan"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <!-- Plan Card -->
+            <Frame BackgroundColor="{Binding PlanColor}"
+                   CornerRadius="16"
+                   Padding="24"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="{Binding PlanLabel}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <Label Text="{Binding PlanDescription}"
+                           FontSize="14"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <Label Text="{Binding ExpiryText}"
+                           FontSize="12"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Features List -->
+            <Label Text="What's included:"
+                   FontSize="16"
+                   FontAttributes="Bold"/>
+
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="{Binding QuizAccessIcon}" FontSize="18"/>
+                <Label Text="{Binding QuizAccessText}" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="{Binding AiIcon}" FontSize="18"/>
+                <Label Text="{Binding AiText}" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="{Binding AnalyticsIcon}" FontSize="18"/>
+                <Label Text="{Binding AnalyticsText}" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <!-- Upgrade Button (only for free users) -->
+            <Button Text="⬆️ Upgrade to Premium"
+                    BackgroundColor="#6C63FF"
+                    TextColor="White"
+                    CornerRadius="12"
+                    FontAttributes="Bold"
+                    IsVisible="{Binding IsFreePlan}"
+                    Command="{Binding GoToUpgradeCommand}"/>
+
+            <!-- Downgrade Button (only for premium users) -->
+            <Button Text="Downgrade to Free"
+                    BackgroundColor="Transparent"
+                    TextColor="Gray"
+                    IsVisible="{Binding IsPremiumPlan}"
+                    Command="{Binding DowngradeCommand}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

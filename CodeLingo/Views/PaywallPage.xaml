@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodeLingo.Views.PaywallPage"
+             Title="">
+
+    <VerticalStackLayout Padding="32" Spacing="24"
+                         VerticalOptions="Center">
+
+        <!-- Lock Icon -->
+        <Label Text="🔒"
+               FontSize="64"
+               HorizontalOptions="Center"/>
+
+        <!-- Message -->
+        <Label Text="Premium Feature"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Label Text="This feature is only available for Premium members. Upgrade now to unlock AI quizzes, analytics and more!"
+               FontSize="14"
+               TextColor="Gray"
+               HorizontalTextAlignment="Center"/>
+
+        <!-- Upgrade Button -->
+        <Button Text="⭐ Upgrade to Premium"
+                BackgroundColor="#6C63FF"
+                TextColor="White"
+                CornerRadius="12"
+                FontAttributes="Bold"
+                HeightRequest="55"
+                Command="{Binding GoToUpgradeCommand}"/>
+
+        <!-- Not Now -->
+        <Button Text="Not now"
+                BackgroundColor="Transparent"
+                TextColor="Gray"
+                Command="{Binding GoBackCommand}"/>
+
+    </VerticalStackLayout>
+</ContentPage>
