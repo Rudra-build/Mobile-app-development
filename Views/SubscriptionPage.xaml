@@ -3,19 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CodelingoApp.Views.SubscriptionPage"
              Title="Subscription">
-    <VerticalStackLayout Padding="20" Spacing="16">
-        <Label Text="Subscription" FontSize="28" FontAttributes="Bold" />
-        <Frame Padding="16">
-            <VerticalStackLayout Spacing="8">
-                <Label Text="Free Plan" FontAttributes="Bold" />
-                <Label Text="Limited quizzes, no AI questions" />
-            </VerticalStackLayout>
-        </Frame>
-        <Frame Padding="16">
-            <VerticalStackLayout Spacing="8">
-                <Label Text="Premium Plan" FontAttributes="Bold" />
-                <Label Text="Unlimited quizzes, AI content, analytics" />
-            </VerticalStackLayout>
-        </Frame>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Label Text="Subscription"
+                   FontSize="28"
+                   FontAttributes="Bold" />
+
+            <Frame Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="CurrentPlanLabel"
+                           Text="Current Plan: Free"
+                           FontAttributes="Bold" />
+                    <Label Text="Free Plan: up to 3 quizzes per day" />
+                    <Label Text="Premium Plan: unlimited quizzes + AI quiz generation" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Switch to Free"
+                    Clicked="OnFreeClicked" />
+
+            <Button Text="Upgrade to Premium"
+                    Clicked="OnPremiumClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

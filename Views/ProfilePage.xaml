@@ -3,11 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CodelingoApp.Views.ProfilePage"
              Title="Profile">
+
     <VerticalStackLayout Padding="20" Spacing="12">
-        <Label Text="Profile" FontSize="28" FontAttributes="Bold" />
-        <Label Text="Name: Student" />
-        <Label Text="Points: 120" />
-        <Label Text="Streak: 5 days" />
+
+        <Label Text="Profile"
+               FontSize="28"
+               FontAttributes="Bold" />
+
+        <Entry x:Name="NameEntry"
+               Placeholder="Enter your name" />
+
+        <Button Text="Save"
+                Clicked="OnSaveClicked" />
+
+        <Label x:Name="PointsLabel"
+               Text="Points: 0" />
+
+        <Label x:Name="StreakLabel"
+               Text="Streak: 0 days" />
+
         <Label Text="Badges: Beginner, Quiz Starter" />
+
     </VerticalStackLayout>
 </ContentPage>

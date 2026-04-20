@@ -3,10 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CodelingoApp.Views.ResultsPage"
              Title="Results">
-    <VerticalStackLayout Padding="20" Spacing="16" VerticalOptions="Center">
-        <Label Text="Your Result" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" />
-        <Label Text="Score: 4/5" HorizontalOptions="Center" />
-        <Label Text="Great job!" HorizontalOptions="Center" />
-        <Button Text="Back Home" Clicked="OnBackHomeClicked" />
+
+    <VerticalStackLayout Padding="24" Spacing="20" VerticalOptions="Center">
+
+        <Label Text="Quiz Complete"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Label x:Name="ScoreLabel"
+               Text="Score: 0/5"
+               FontSize="22"
+               HorizontalOptions="Center" />
+
+        <Label x:Name="AccuracyLabel"
+               Text="Accuracy: 0%"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <Label x:Name="SummaryLabel"
+               Text="Summary goes here"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <Label x:Name="PointsLabel"
+               Text="Points earned: 0"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <Button Text="Back to Home"
+                Clicked="OnBackHomeClicked" />
+
     </VerticalStackLayout>
 </ContentPage>
