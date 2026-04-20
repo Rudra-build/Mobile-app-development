@@ -3,15 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CodelingoApp.Views.QuizPage"
              Title="Quiz">
-    <VerticalStackLayout Padding="20" Spacing="16">
-        <Label Text="Sample Quiz" FontSize="28" FontAttributes="Bold" />
-        <Label Text="Question 1 of 5" />
-        <Frame Padding="16">
-            <Label Text="What does API stand for?" FontSize="18" />
-        </Frame>
-        <Button Text="Application Programming Interface" />
-        <Button Text="Advanced Program Integration" />
-        <Button Text="Automatic Page Index" />
-        <Button Text="Finish Quiz" Clicked="OnFinishClicked" />
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+
+            <Label x:Name="ProgressLabel"
+                   Text="Question 1 of 5"
+                   FontSize="16"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="TimerLabel"
+                   Text="Time left: 15s"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="QuestionLabel"
+                   Text="Question goes here"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center" />
+
+            <Button x:Name="OptionButton1"
+                    Text="Option 1"
+                    Clicked="OnOptionClicked"
+                    CommandParameter="0" />
+
+            <Button x:Name="OptionButton2"
+                    Text="Option 2"
+                    Clicked="OnOptionClicked"
+                    CommandParameter="1" />
+
+            <Button x:Name="OptionButton3"
+                    Text="Option 3"
+                    Clicked="OnOptionClicked"
+                    CommandParameter="2" />
+
+            <Button x:Name="OptionButton4"
+                    Text="Option 4"
+                    Clicked="OnOptionClicked"
+                    CommandParameter="3" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

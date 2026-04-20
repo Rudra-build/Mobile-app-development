@@ -6,16 +6,46 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="16">
             <Label Text="Home" FontSize="28" FontAttributes="Bold" />
+
             <Frame Padding="16">
-                <VerticalStackLayout>
-                    <Label Text="Current Points: 120" FontAttributes="Bold" />
-                    <Label Text="Streak: 5 days" />
-                    <Label Text="Plan: Free" />
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="PointsLabel"
+                           Text="Current Points: 0"
+                           FontAttributes="Bold" />
+                    <Label x:Name="StreakLabel"
+                           Text="Streak: 0 days" />
+                    <Label x:Name="PlanLabel"
+                           Text="Plan: Free" />
+                    <Label x:Name="LevelLabel"
+                           Text="Level: 1" />
                 </VerticalStackLayout>
             </Frame>
+
+            <Label Text="Category" />
+            <Picker x:Name="CategoryPicker" Title="Select category">
+                <Picker.Items>
+                    <x:String>All</x:String>
+                    <x:String>Web</x:String>
+                    <x:String>Programming</x:String>
+                    <x:String>DSA</x:String>
+                    <x:String>Database</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Difficulty" />
+            <Picker x:Name="DifficultyPicker" Title="Select difficulty">
+                <Picker.Items>
+                    <x:String>All</x:String>
+                    <x:String>Easy</x:String>
+                    <x:String>Medium</x:String>
+                </Picker.Items>
+            </Picker>
+
             <Button Text="Start Sample Quiz" Clicked="OnStartQuizClicked" />
+            <Button Text="Generate AI Quiz" Clicked="OnAiQuizClicked" />
             <Button Text="Profile" Clicked="OnProfileClicked" />
             <Button Text="Subscription" Clicked="OnSubscriptionClicked" />
+            <Button Text="Leaderboard" Clicked="OnLeaderboardClicked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
