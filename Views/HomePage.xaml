@@ -43,9 +43,11 @@
 
             <Button Text="Start Sample Quiz" Clicked="OnStartQuizClicked" />
             <Button Text="Generate AI Quiz" Clicked="OnAiQuizClicked" />
+            <Button Text="Leaderboard" Clicked="OnLeaderboardClicked" />
+            <Button Text="Analytics" Clicked="OnAnalyticsClicked" />
             <Button Text="Profile" Clicked="OnProfileClicked" />
             <Button Text="Subscription" Clicked="OnSubscriptionClicked" />
-            <Button Text="Leaderboard" Clicked="OnLeaderboardClicked" />
+            <Button Text="Logout" Clicked="OnLogoutClicked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

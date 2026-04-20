@@ -25,6 +25,8 @@
 
             <Button Text="Upgrade to Premium"
                     Clicked="OnPremiumClicked" />
+            
+            <Button Text="Refresh Plan" Clicked="OnRefreshClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

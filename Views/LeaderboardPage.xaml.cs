@@ -4,17 +4,26 @@ namespace CodelingoApp.Views;
 
 public partial class LeaderboardPage : ContentPage
 {
+    private readonly ApiService _apiService;
+
     public LeaderboardPage()
     {
         InitializeComponent();
+        _apiService = new ApiService();
+    }
 
-        var userState = new UserStateService();
-        var leaderboardService = new LeaderboardService();
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
 
-        string name = Preferences.Get("username", "You");
-        int points = userState.GetPoints();
-
-        LeaderboardList.ItemsSource =
-            leaderboardService.GetLeaderboard(points, name);
+        try
+        {
+            var leaderboard = await _apiService.GetLeaderboardAsync();
+            LeaderboardList.ItemsSource = leaderboard;
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlertAsync("Error", $"Failed to load leaderboard: {ex.Message}", "OK");
+        }
     }
 }

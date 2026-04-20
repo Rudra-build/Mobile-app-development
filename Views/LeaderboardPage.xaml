@@ -15,7 +15,7 @@
                 <DataTemplate>
                     <Frame Margin="4" Padding="10">
                         <HorizontalStackLayout>
-                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Text="{Binding Username}" FontAttributes="Bold" />
                             <Label Text="{Binding Points}" HorizontalOptions="EndAndExpand" />
                         </HorizontalStackLayout>
                     </Frame>

@@ -1,4 +1,7 @@
 bin/
 obj/
 .vs/
-.DS_Store
+.vscode/
+*.user
+*.suo
+*.db

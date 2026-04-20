@@ -111,4 +111,22 @@ public class QuizService
         session.CurrentQuestionIndex++;
         return correct;
     }
+
+
+    public QuizSession CreateQuizFromAi(List<AiQuizQuestion> aiQuestions)
+    {
+        var questions = aiQuestions.Select(q => new QuizQuestion
+        {
+            QuestionText = q.QuestionText,
+            Options = q.Options,
+            CorrectOptionIndex = q.CorrectOptionIndex,
+            Category = q.Category,
+            Difficulty = "AI"
+        }).ToList();
+
+        return new QuizSession
+        {
+            Questions = questions
+        };
+    }
 }
